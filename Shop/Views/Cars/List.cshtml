@@ -1,14 +1,21 @@
-﻿<h1>Все автомобили</h1>
-<h3>@Model.currCategory</h3>
+﻿@{ 
+    /* Эта страница будет вставлена в @RenderBody() файла _Layout.cshtml, сам _Layout указан
+    в файле _ViewStart, поэтому Layout прописывать не нужно
+    Следующие строки мы подключили в _ViewImports, поэтому они здесь не нужны
+    @using Shop.ViewModels
+    @model CarListViewModel */
+}
+<h1>Все автомобили</h1>
+<h3>@Model.CurrCategory</h3>
 <div class="row mt-5 mb-2">
     @{
-        foreach (var car in Model.allCars)
+        foreach (var car in Model.AllCars)
         {            
             <div class="col-lg-4">
-                <img class="img-thumbnail" src="@car.img" alt="@car.name" />
-                <h2>@car.name</h2>
-                <p>@car.shortDesc</p>
-                <p>Цена: @car.price.ToString("c")</p>
+                <img class="img-thumbnail" src="@car.Img" alt="@car.Name" />
+                <h2>@car.Name</h2>
+                <p>@car.ShortDesc</p>
+                <p>Цена: @car.Price.ToString("c")</p>
                 <p><a class="btn btn-warning" href="#">Подробнее</a></p>
             </div>
         }

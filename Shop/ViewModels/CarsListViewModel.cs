@@ -1,14 +1,10 @@
 ﻿using Shop.Data.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace Shop.ViewModels
-{
-    public class CarsListViewModel
-    {
-        public IEnumerable<Car> allCars { get; set; }
-        public string currCategory { get; set; }
+namespace Shop.ViewModels {    
+    public class CarsListViewModel {
+        // ф-я, получающая все товары
+        public IEnumerable<Car> AllCars { get; set; }
+        public string CurrCategory { get; set; }
     }
 }

@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{ 
+    // Макет Razor
+}
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -34,7 +37,10 @@
         </nav>
     </header>
     <div class="container mt-5">
-        @RenderBody()
+        @{ 
+            // сюда будем встраивать различные блоки
+        }
+        @RenderBody() 
     </div>
     <footer class="container">
         <p class="float-right"><a href="#">Back to top</a></p>

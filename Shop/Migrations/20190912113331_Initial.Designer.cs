@@ -36,7 +36,7 @@ namespace Shop.Migrations
 
                     b.Property<string>("longDesc");
 
-                    b.Property<string>("name");
+                    b.Property<string>("Name");
 
                     b.Property<int>("price");
 
