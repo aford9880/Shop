@@ -54,7 +54,15 @@ namespace Shop
                 app.UseStatusCodePages(); // отображение кодов страниц
                 app.UseStaticFiles(); // использование статических файлов (css, картинки и т.д.)                
                 app.UseSession(); // чтобы сессии работали
-                app.UseMvcWithDefaultRoute(); // отслеживание URL: если в адресе не будет указан контроллер и вид, то исп. URL по умолчанию        
+                // отслеживание URL: если в адресе не будет указан контроллер и вид, то исп. URL по умолчанию        
+                //app.UseMvcWithDefaultRoute(); // В нашем случае попадаем на контроллер хоум
+                // Пропишем свои адреса
+                app.UseMvc(routes => {
+                    // В {} параметры по умолчанию, если заданы пустые строки, без {} обязательные параметры
+                    routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{Id?}"); // адрес по умолчанию, 3-й параметр не обязательный
+                    // категории, если мы не передаем ничего, то будет вызван Car/List
+                    routes.MapRoute(name: "categoryFilter", template: "Car/{action}/{category?}", defaults: new { Controller = "Car", action = "List" });                    
+                });
                 using (var scope = app.ApplicationServices.CreateScope()) { // создаем область (окружение) для использования сервиса AppDBContent
                     AppDBContent content = scope.ServiceProvider.GetRequiredService<AppDBContent>();
                     DBObjects.Initial(content); // Обращаемся к БД за товарами
