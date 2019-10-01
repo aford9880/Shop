@@ -1,0 +1,11 @@
+﻿@model HomeViewModel
+
+<h1>Лучшие автомобили</h1>
+<div class="row mt-5 mb-2">
+    @{
+        foreach (Car car in Model.FavCars) {
+            // Вызываем шаблон AllCars из папки Share и в него передаем каждый раз объект, который необходимо отображать
+            @Html.Partial("AllCars", car)
+        }
+    }
+</div>

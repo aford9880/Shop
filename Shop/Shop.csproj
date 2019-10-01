@@ -38,7 +38,8 @@
     <PackageReference Include="Microsoft.Extensions.Primitives" Version="3.0.0" />
     <PackageReference Include="Microsoft.Extensions.WebEncoders" Version="3.0.0" />
     <PackageReference Include="Microsoft.Net.Http.Headers" Version="2.2.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Utils" Version="2.2.0" />
   </ItemGroup>
 
 </Project>

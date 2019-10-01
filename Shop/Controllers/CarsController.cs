@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Shop.Data.Interfaces;
+using Shop.Data.Models;
 using Shop.ViewModels;
+using System.Collections.Generic;
 
 namespace Shop.Controllers {
     /* Этот класс должен заканчиваться на Controller, чтобы на система считала его контроллером и на сайте подбирался контроллер для введенного URl адреса, во как
