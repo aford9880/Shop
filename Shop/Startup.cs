@@ -34,6 +34,7 @@ namespace Shop
             // Связывание: 1-й параметр - с каким интерфейсом работаем, 2-й - какой класс реализует этот интерфейс
             services.AddTransient<IAllCars, CarRepository>(); // интерфейс IAllCars реализуется в классе /*MockCars*/ CarRepository
             services.AddTransient<ICarsCategory, CategoryRepository>(); // интерфейс ICarsCategory реализуется в классе /*MockCategory*/ CarRepository
+            services.AddTransient<IAllOrders, OrdersRepository>();
             // Добавляем сервис, который позволяет работать с сессиями
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             // Сервис, который делает так, что если 2 пользователя зайдут в корзину, то для двух пользователей будет выдана разная корзина

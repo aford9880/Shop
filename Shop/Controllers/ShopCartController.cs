@@ -26,7 +26,7 @@ namespace Shop.Controllers {
         public RedirectToActionResult addToCart(int id) {
             var item = _carRep.Cars.FirstOrDefault(i => i.Id == id);
             // Проверка если item <> null, то
-            if (item != null) {
+            if (item != null) { // вызываем функцию добавления товара в корзину из модели
                 _shopCart.AddToCart(item);
             }
             return RedirectToAction("Index");
