@@ -3,45 +3,39 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Shop.Migrations
 {
-    public partial class Initial : Migration
-    {
-        protected override void Up(MigrationBuilder migrationBuilder)
-        {
+    public partial class Initial : Migration {
+        protected override void Up(MigrationBuilder migrationBuilder) {
             migrationBuilder.CreateTable(
                 name: "Category",
-                columns: table => new
-                {
+                columns: table => new {
                     id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     categoryName = table.Column<string>(nullable: true),
                     desc = table.Column<string>(nullable: true)
                 },
-                constraints: table =>
-                {
+                constraints: table => {
                     table.PrimaryKey("PK_Category", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Car",
-                columns: table => new
-                {
-                    id = table.Column<int>(nullable: false)
+                columns: table => new {
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    name = table.Column<string>(nullable: true),
-                    shortDesc = table.Column<string>(nullable: true),
-                    longDesc = table.Column<string>(nullable: true),
-                    img = table.Column<string>(nullable: true),
-                    price = table.Column<int>(nullable: false),
-                    isFavorite = table.Column<bool>(nullable: false),
-                    available = table.Column<bool>(nullable: false),
-                    categoryID = table.Column<int>(nullable: false)
+                    Name = table.Column<string>(nullable: true),
+                    ShortDesc = table.Column<string>(nullable: true),
+                    LongDesc = table.Column<string>(nullable: true),
+                    Img = table.Column<string>(nullable: true),
+                    Price = table.Column<int>(nullable: false),
+                    IsFavorite = table.Column<bool>(nullable: false),
+                    Available = table.Column<bool>(nullable: false),
+                    CategoryID = table.Column<int>(nullable: false)
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Car", x => x.id);
+                constraints: table => {
+                    table.PrimaryKey("PK_Car", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Car_Category_categoryID",
-                        column: x => x.categoryID,
+                        column: x => x.CategoryID,
                         principalTable: "Category",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
@@ -53,8 +47,7 @@ namespace Shop.Migrations
                 column: "categoryID");
         }
 
-        protected override void Down(MigrationBuilder migrationBuilder)
-        {
+        protected override void Down(MigrationBuilder migrationBuilder) {
             migrationBuilder.DropTable(
                 name: "Car");
 

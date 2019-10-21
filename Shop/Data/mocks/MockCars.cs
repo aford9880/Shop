@@ -3,81 +3,71 @@ using Shop.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
-namespace Shop.Data.mocks
-{
-    public class MockCars : IAllCars
-    {
+namespace Shop.Data.mocks {
+    /* Моксы позволяют создавать нужные нам объекты, функции и, по сути, создавать информацию внутри нашего проекта */
+    /* в этом классе реализуем интерфейс IAllCars и его функции */
+    public class MockCars : IAllCars {
         private readonly ICarsCategory _categoryCars = new MockCategory();
-        public IEnumerable<Car> Cars
-        {
-            get
-            {
-                return new List<Car>
-                {
-                    new Car
-                    {
-                        name = "Tesla",
-                        shortDesc = "Быстрый автомобиль",
-                        longDesc = "Красивый, быстрый и очень тихий автомобиль компании Tesla",
-                        img = "/img/tesla.jpg",
-                        price = 45000,
-                        isFavorite = true,
-                        available = true,
+        public IEnumerable<Car> Cars {
+            get {
+                return new List<Car> {
+                    new Car {
+                        Name = "Tesla",
+                        ShortDesc = "Быстрый автомобиль",
+                        LongDesc = "Красивый, быстрый и очень тихий автомобиль компании Tesla",
+                        Img = "/img/tesla.jpg",
+                        Price = 45000,
+                        IsFavorite = true,
+                        Available = true,
                         Category = _categoryCars.AllCategories.First()
                     },
-                    new Car
-                    {
-                        name = "Ford Fiesta",
-                        shortDesc = "Тихий и спокойный",
-                        longDesc = "Удобный автомобиль для городской жизни",
-                        img = "/img/fiesta.jpg",
-                        price = 11000,
-                        isFavorite = false,
-                        available = true,
+                    new Car {
+                        Name = "Ford Fiesta",
+                        ShortDesc = "Тихий и спокойный",
+                        LongDesc = "Удобный автомобиль для городской жизни",
+                        Img = "/img/fiesta.jpg",
+                        Price = 11000,
+                        IsFavorite = false,
+                        Available = true,
                         Category = _categoryCars.AllCategories.Last()
                     },
-                   new Car
-                    {
-                        name = "BMW M3",
-                        shortDesc = "Дерзкий и сильный",
-                        longDesc = "Удобный автомобиль для городской жизни",
-                        img = "/img/m3.jpg",
-                        price = 65000,
-                        isFavorite = true,
-                        available = true,
+                   new Car {
+                        Name = "BMW M3",
+                        ShortDesc = "Дерзкий и сильный",
+                        LongDesc = "Удобный автомобиль для городской жизни",
+                        Img = "/img/m3.jpg",
+                        Price = 65000,
+                        IsFavorite = true,
+                        Available = true,
                         Category = _categoryCars.AllCategories.Last()
                     },
-                   new Car
-                    {
-                        name = "Mercedes C class",
-                        shortDesc = "Уютный и большой",
-                        longDesc = "Удобный автомобиль для городской жизни",
-                        img = "/img/mercedes.jpg",
-                        price = 40000,
-                        isFavorite = false,
-                        available = false,
+                   new Car {
+                        Name = "Mercedes C class",
+                        ShortDesc = "Уютный и большой",
+                        LongDesc = "Удобный автомобиль для городской жизни",
+                        Img = "/img/mercedes.jpg",
+                        Price = 40000,
+                        IsFavorite = false,
+                        Available = false,
                         Category = _categoryCars.AllCategories.Last()
                     },
-                   new Car
-                    {
-                        name = "Nissan Leaf",
-                        shortDesc = "Бесшумный и экономный",
-                        longDesc = "Удобный автомобиль для городской жизни",
-                        img = "/img/nissan.jpg",
-                        price = 14000,
-                        isFavorite = true,
-                        available = true,
+                   new Car {
+                        Name = "Nissan Leaf",
+                        ShortDesc = "Бесшумный и экономный",
+                        LongDesc = "Удобный автомобиль для городской жизни",
+                        Img = "/img/nissan.jpg",
+                        Price = 14000,
+                        IsFavorite = true,
+                        Available = true,
                         Category = _categoryCars.AllCategories.First()
                     }
                 };
             }
         }
-        public IEnumerable<Car> getFavCars { get; set; }
+        public IEnumerable<Car> GetFavCars { get; set; }
 
-        public Car getObjectCar(int carID)
-        {
+        public Car GetObjectCar(int carID) {
             throw new NotImplementedException();
         }
     }

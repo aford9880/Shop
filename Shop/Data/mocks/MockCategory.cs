@@ -1,22 +1,16 @@
 ﻿using Shop.Data.Interfaces;
 using Shop.Data.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace Shop.Data.mocks
-{
-    public class MockCategory : ICarsCategory
-    {
-        public IEnumerable<Category> AllCategories
-        {
-            get
-            {
-                return new List<Category>
-                {
-                    new Category { categoryName = "Электромобили", desc = "Современный вид транспорта" },
-                    new Category { categoryName = "Классические автомобили", desc = "Машины с двигателем внутреннего сгорания"}
+namespace Shop.Data.mocks {
+    /* Моксы позволяют создавать нужные нам объекты, функции и, по сути, создавать информацию внутри нашего проекта */
+    /* в этом классе реализуем интерфейс ICarsCategory и его функции */   
+    public class MockCategory : ICarsCategory {
+        public IEnumerable<Category> AllCategories {
+            get {
+                return new List<Category> {
+                    new Category { CategoryName = "Электромобили", Desc = "Современный вид транспорта" },
+                    new Category { CategoryName = "Классические автомобили", Desc = "Машины с двигателем внутреннего сгорания"}
                 };
             }
         }

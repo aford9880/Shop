@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{ 
+    // Макет Razor
+}
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -9,21 +12,27 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="#">Carousel</a>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Testing project</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" asp-controller="Home" asp-action="Index">Главная</a> @{ /*asp-controller="Home" asp-action="Index" - использование тэг-хелперов*/ }
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="/Cars/List">Машины</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
+                        <a class="nav-link" href="/Cars/List/electro">Электро</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Cars/List/fuel">Бензиновые</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ShopCart/">Корзина</a>
                     </li>
                 </ul>
                 <form class="form-inline mt-2 mt-md-0">
@@ -34,11 +43,14 @@
         </nav>
     </header>
     <div class="container mt-5">
-        @RenderBody()
+        @{ 
+            // сюда будем встраивать различные блоки
+        }
+        @RenderBody() 
     </div>
     <footer class="container">
         <p class="float-right"><a href="#">Back to top</a></p>
-        <p>© 2017-2019 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+        <p>© 2019 Все права защищены · <a href="#">Соглашение</a></p>
     </footer>
     <script src="~/js/bootstrap.min.js"></script>
 </body>

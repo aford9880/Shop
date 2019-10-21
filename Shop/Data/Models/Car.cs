@@ -1,21 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Shop.Data.Models
-{
-    public class Car
-    {
-        public int id { set; get; }
-        public string name { set; get; }
-        public string shortDesc { set; get; }
-        public string longDesc { set; get; }
-        public string img { set; get; }
-        public ushort price { set; get; }
-        public bool isFavorite { set; get; }
-        public bool available { set; get; }
-        public int categoryID { set; get; }
-        public virtual Category Category { set; get; }
+﻿namespace Shop.Data.Models {
+    public class Car {
+        public int Id { set; get; }
+        public string Name { set; get; }
+        public string ShortDesc { set; get; }
+        public string LongDesc { set; get; }
+        public string Img { set; get; }
+        public ushort Price { set; get; }
+        public bool IsFavorite { set; get; }
+        public bool Available { set; get; }
+        public int CategoryID { set; get; }
+        public virtual Category Category { set; get; } // Создаем объект со всеми значениями, которые есть в Category.cs
     }
 }

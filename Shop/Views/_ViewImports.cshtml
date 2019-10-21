@@ -1,1 +1,9 @@
-﻿@using Shop.ViewModels
+﻿@{ 
+    /* Шаблон называется "Импорт представлений Razor". Прописываем, какие файлы хотим подключить к шаблонам, в нашем случае это 
+     Shop.ViewModels, после подключения эту строки "@using Shop.ViewModels" и "@model CarListViewModel" можно удалить из List.cshtml.
+     Вообще Shop.ViewModels подключается к каждому шаблону в папке (+подпапках) Views*/
+}
+@using Shop.ViewModels
+@using Shop.Data.Models
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers

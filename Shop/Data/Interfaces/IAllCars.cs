@@ -1,14 +1,10 @@
 ﻿using Shop.Data.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace Shop.Data.Interfaces
-{
+namespace Shop.Data.Interfaces {
     public interface IAllCars {
-        IEnumerable<Car> Cars { get; }
-        IEnumerable<Car> getFavCars { get; }
-        Car getObjectCar(int carID);
+        IEnumerable<Car> Cars { get; } // ф-я возвращает все товары
+        IEnumerable<Car> GetFavCars { get; } // ф-я возвращает избранные товары
+        Car GetObjectCar(int carID); // ф-я возвращает товар по Id
     }
 }
